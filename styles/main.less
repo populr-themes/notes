@@ -1,0 +1,85 @@
+/*
+Your entire stylesheet should be nested in the "html .themed" selector. This 
+prevents your theme from accidentally overriding any styles in the Pop editor. 
+Also, some javascript libraries (e.g. fancybox) append dom elements directly 
+to the body. Add the ".themed" class to those elements and you can style them 
+here as well. It's not a great solution, but at least it works!
+*/
+
+@import 'preboot';
+@import '//fonts.googleapis.com/css?family=Lekton:400,700&.css';
+@import 'variables';
+
+.title-color () when (lightness(@background-color) >= 50%) {
+  color: #222;
+}
+.title-color () when (lightness(@background-color) < 50%) {
+  color: #C9C9C9;
+}
+
+#reset > .global-reset();
+
+body {
+	font-size:18px;
+	line-height:1.5em;
+	font-family: @headline-font-family;
+	font-weight:400;
+  color: @text-color;
+	/* background-color: @background-color; */
+}
+	
+
+	
+html .themed .columnizer-region > .columnizer-cols1 .columnizer-col {margin-top: 0 !important;}
+
+.images a.fancybox { position: relative; display:block; overflow:hidden; margin-bottom:5px;}	
+
+a {
+  color: @accent-color; text-decoration: underline;
+    &:hover { color: darken(@accent-color,15); text-decoration: underline;}
+}
+b,strong { font-weight:700; }
+
+#main-content { 
+  padding: 2em 3em 3em;
+  margin: 2em auto;
+  width: 960px;
+}
+  	
+  	
+#pop-title, .asset-title { font-family: @headline-font-family; font-weight: @headline-font-weight; color: @text-color; font-size:1.3em; line-height: 1.1em;}  
+#pop-title { margin-bottom: 1em;  font-size: 2em; }
+
+.asset {  }
+.asset-inner { }
+.body, .description, .asset-title   { }
+.asset-title  {  }
+.asset .content {  }
+.body, .description {  }
+
+.asset {
+  ol, ul {
+    list-style: none;
+    margin: 1em;
+  }
+  li {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 3em;
+  }
+}
+
+.asset ul.playlist {
+  margin:0;
+  
+   li { 
+    list-style: none;
+    margin-right: 10px;
+    margin-left: 0;
+    display: block;
+    float: left;
+ }
+  }
+
+.asset-type-imagegroup img, .asset-type-embedgroup iframe {padding: 1em 0;}
+.asset-type-documentgroup .documents a {display: block; }
