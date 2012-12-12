@@ -20,7 +20,7 @@
   <script src="/js/jquery.cycle.min.js"></script>
 
   <script src="/js/jquery.hoverintent.min.js" type="text/javascript"></script>
- 	<script src="/js/main.js"></script>
+  <script src="/js/main.js"></script>
 
   <!-- This script loads the Populr theming engine. Populr will automatically remove it at runtime. -->
   <script src="http://populr.me/assets/developers/themer.js"></script>
@@ -33,102 +33,102 @@
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
   
-	{{{title}}}
+  {{{title}}}
 
   
 {{#region "columnizer" id="main-region" max_cols="1" class="gradient" default_content="T-3" max_auto_assets="1" dummy_content="T-2|I-1|I-2|V-1|V-3|D-1|D-3|E-2|E-3"}}
  
-			
+      
 
-		{{#asset "text" size="1"}}
+    {{#asset "text" size="1"}}
       <div class="content">
-      	{{{title}}}
-        <div class="asset-content">	
+        {{{title}}}
+        <div class="asset-content"> 
           {{{body}}}
         </div>
       </div>
-		{{/asset}}
+    {{/asset}}
 
 
-		{{#asset "imagegroup" size="1"}}
-		{{{title}}}
-			<div class="asset-content">	
-			<div class="description">
-				{{{description}}}
-			</div>
+    {{#asset "imagegroup" size="1"}}
+    {{{title}}}
+      <div class="asset-content"> 
+      <div class="">
+        {{{description}}}
+      </div>
 
-				{{#if_many images}}
-          <div class="slideshow">	
+        {{#if_many images}}
+          <div class="slideshow"> 
             <div class="images">
             {{#each images}}
-    				  {{#if link}}
+              {{#if link}}
                 <a href="{{{link}}}">
-                	<img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960" />
-              	</a>
+                  <img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960" />
+                </a>
               {{else}}
                 <a href="{{{original_url}}}" class="fancybox">
-                	<img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960"/>
-              	</a>
+                  <img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960"/>
+                </a>
               {{/if}}
             {{/each}}
-						</div>
+            </div>
           </div>
-				{{else}}
+        {{else}}
           {{#each images}}
             {{#if link}}
               <a href="{{{link}}}" class="single-image">
-              	<img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960" />
-            	</a>
+                <img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960" />
+              </a>
             {{else}}
               <a href="{{{original_url}}}" class="fancybox single-image">
-              	<img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960" />
-            	</a>
+                <img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960" />
+              </a>
             {{/if}}            
           {{/each}}
         {{/if_many}}
-			</div>
-		{{/asset}}
+      </div>
+    {{/asset}}
 
 
 
-		{{#asset "videogroup" size="1"}}
-		{{{title}}}
-			<div class="asset-content">
-				<div class="description">
-					{{{description}}}
-				</div>
-        {{{videoplayer contents width="960" height="500" resolution="medium"}}}
-			</div>
-		{{/asset}}
-
-
-		{{#asset "embedgroup" size="1" width="960"}}
+    {{#asset "videogroup" size="1"}}
     {{{title}}}
-			<div class="asset-content">
-				<div class="description">
-					{{{description}}}
-				</div>
+      <div class="asset-content">
+        <div class="">
+          {{{description}}}
+        </div>
+        {{{videoplayer contents width="960" height="500" resolution="medium"}}}
+      </div>
+    {{/asset}}
+
+
+    {{#asset "embedgroup" size="1" width="960"}}
+    {{{title}}}
+      <div class="asset-content">
+        <div class="">
+          {{{description}}}
+        </div>
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
-			</div>
-		{{/asset}}
-		
+      </div>
+    {{/asset}}
+    
 
-		{{#asset "documentgroup" size="1"}}
-		{{{title}}}
-			<div class="asset-content">
-				<div class="documents-content">
-					{{{description}}}
-				</div>
-				<div class="documents">
-	          {{#documents}}
-	            <a href="{{{original_url}}}" title="{{{format_file_size source_file_size}}}"><span class="file-extension file-extension-{{extension}}"></span> <span class="file-title">{{{title}}}</span> <!-- <span class="filesize">({{{format_file_size source_file_size}}})</span> --></a>
-	          {{/documents}}
+    {{#asset "documentgroup" size="1"}}
+    {{{title}}}
+      <div class="asset-content">
+        <div class="documents-content">
+          {{{description}}}
         </div>
-			</div>
-		{{/asset}}
-		
+        <div class="documents">
+            {{#documents}}
+              <a href="{{{original_url}}}" title="{{{format_file_size source_file_size}}}"><span class="file-extension file-extension-{{extension}}"></span> <span class="file-title">{{{title}}}</span> <!-- <span class="filesize">({{{format_file_size source_file_size}}})</span> --></a>
+            {{/documents}}
+        </div>
+      </div>
+    {{/asset}}
+    
 
   {{/region}}
 
