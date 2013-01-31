@@ -14,10 +14,15 @@ body.palette-custom {
 
   .text-color () when (lightness(@custom-color) >= 50%) {
     color: hsl(hue(@custom-color), 90%, 20%);
-    border-color: hsl(hue(@custom-color), 90%, 20%);
   }
   .text-color () when (lightness(@custom-color) < 50%) {
     color: hsl(hue(@custom-color), 90%, 80%);
+  }
+
+  .border-color () when (lightness(@custom-color) >= 50%) {
+    border-color: hsl(hue(@custom-color), 90%, 20%);
+  }
+  .border-color () when (lightness(@custom-color) < 50%) {
     border-color: hsl(hue(@custom-color), 90%, 80%);
   }
 
@@ -43,6 +48,6 @@ body.palette-custom {
 
   ul.playlist li img { width: inherit !important; }
 
-  #pop-title, .asset-title, .asset-content, a { .text-color(); }
+  #pop-title, .asset-title, .asset-content, a { .text-color(); .border-color(); }
 
 }
