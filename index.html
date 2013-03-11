@@ -51,44 +51,15 @@
 
 
     {{#asset "imagegroup" size="1"}}
-    {{{title}}}
-      <div class="asset-content"> 
-      <div class="">
-        {{{description}}}
-      </div>
-
-        {{#if_many images}}
-          <div class="slideshow"> 
-            <div class="images">
-            {{#each images}}
-              {{#if link}}
-                <a href="{{{link}}}">
-                  <img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960" />
-                </a>
-              {{else}}
-                <a href="{{{original_url}}}" class="fancybox">
-                  <img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960"/>
-                </a>
-              {{/if}}
-            {{/each}}
-            </div>
-          </div>
-        {{else}}
-          {{#each images}}
-            {{#if link}}
-              <a href="{{{link}}}" class="single-image">
-                <img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960" />
-              </a>
-            {{else}}
-              <a href="{{{original_url}}}" class="fancybox single-image">
-                <img alt="{{{title}}}" src="{{{resize original_url width=960}}}" width="960" />
-              </a>
-            {{/if}}            
-          {{/each}}
-        {{/if_many}}
+      <div class="content">
+        {{{imageslider contents width="650" prevnext-enabled=false fx="fade" crop-single=true}}}
+        <div class="overlay">&nbsp;</div>
+        <div class="asset-content">
+          {{{title}}}
+          {{{description}}}
+        </div>
       </div>
     {{/asset}}
-
 
 
     {{#asset "videogroup" size="1"}}
