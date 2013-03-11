@@ -7,6 +7,8 @@
 
   <palette class="palette-default" name="Light" preview="#EEEEEE">
   <palette class="palette-dark" name="Dark" preview="#222222">
+  <palette class="palette-default2" name="Light + Sidebar" preview="#EEEEEE">
+  <palette class="palette-dark2" name="Dark + Sidebar" preview="#222222">
   <palette class="palette-custom" name="Custom" preview="">
 
   <!-- Add any styles your theme requires here -->
@@ -49,13 +51,12 @@
 
 
     {{#asset "imagegroup" size="1"}}
-      <div class="content">
-        {{{imageslider contents width="650" prevnext-enabled=false fx="fade" crop-single=true}}}
-        <div class="overlay">&nbsp;</div>
-        <div class="asset-content">
-          {{{title}}}
+      {{{title}}}
+      <div class="asset-content"> 
+        <div class="description">
           {{{description}}}
         </div>
+        {{{imageslider contents width="650" prevnext-enabled=false fx="fade"}}}
       </div>
     {{/asset}}
 
