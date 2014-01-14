@@ -32,7 +32,7 @@
       
 
     {{#asset "text" size="1"}}
-      <div class="content">
+      <div class="content clearfix">
         {{{title}}}
         <div class="asset-content"> 
           {{{body}}}
@@ -42,28 +42,33 @@
 
 
     {{#asset "imagegroup" size="1"}}
-      {{{title}}}
-      <div class="asset-content"> 
-        <div class="description">
-          {{{description}}}
+      <div class="clearfix">
+        {{{title}}}
+        <div class="asset-content"> 
+          <div class="description">
+            {{{description}}}
+          </div>
+          {{{imageslider contents width="650" height="400" prevnext-enabled=false fx="fade"}}}
         </div>
-        {{{imageslider contents width="650" height="400" prevnext-enabled=false fx="fade"}}}
       </div>
     {{/asset}}
 
 
     {{#asset "videogroup" size="1"}}
-    {{{title}}}
-      <div class="asset-content">
-        <div class="">
-          {{{description}}}
+      <div class="clearfix">
+      {{{title}}}
+        <div class="asset-content">
+          <div class="">
+            {{{description}}}
+          </div>
+          {{{videoplayer contents width="650" height="500" resolution="medium"}}}
         </div>
-        {{{videoplayer contents width="650" height="500" resolution="medium"}}}
       </div>
     {{/asset}}
 
 
     {{#asset "embedgroup" size="1" width="650"}}
+    <div class="clearfix">
     {{{title}}}
       <div class="asset-content">
         <div class="">
@@ -73,19 +78,22 @@
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
       </div>
+      </div>
     {{/asset}}
     
 
     {{#asset "documentgroup" size="1"}}
-    {{{title}}}
-      <div class="asset-content">
-        <div class="documents-content">
-          {{{description}}}
-        </div>
-        <div class="documents">
-            {{#documents}}
-              <a href="{{{original_url}}}" title="{{{format_file_size source_file_size}}}"><span class="file-extension file-extension-{{extension}}"></span> <span class="file-title">{{{title}}}</span> <!-- <span class="filesize">({{{format_file_size source_file_size}}})</span> --></a>
-            {{/documents}}
+      <div class="clearfix">
+      {{{title}}}
+        <div class="asset-content">
+          <div class="documents-content">
+            {{{description}}}
+          </div>
+          <div class="documents">
+              {{#documents}}
+                <a href="{{{original_url}}}" title="{{{format_file_size source_file_size}}}"><span class="file-extension file-extension-{{extension}}"></span> <span class="file-title">{{{title}}}</span> <!-- <span class="filesize">({{{format_file_size source_file_size}}})</span> --></a>
+              {{/documents}}
+          </div>
         </div>
       </div>
     {{/asset}}
